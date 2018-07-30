@@ -9,7 +9,7 @@ namespace jenkinTest
 {
     public partial class _Default : Page
     {
-        public string globalmsg = "CI 4";
+        public string globalmsg = "CI Continuous build";
         protected void Page_Load(object sender, EventArgs e)
         {
 
