@@ -461,18 +461,17 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <PropertyGroup>
-  <OnBeforePackageUsingManifest>AddCustomSkipRules</OnBeforePackageUsingManifest>
-</PropertyGroup>
-<Target Name="AddCustomSkipRules">
-  <ItemGroup>
-    <MsDeploySkipRules Include="SkipDeleteAppData">
-      <SkipAction>Delete</SkipAction>
-      <ObjectName>filePath</ObjectName>
-      <AbsolutePath>$(_Escaped_PackageTempDir)\\Account\\.*</AbsolutePath>
-      <XPath>
-      </XPath>
-    </MsDeploySkipRules>
-  </ItemGroup>
-</Target>
+<PropertyGroup>
+    <OnBeforePackageUsingManifest>AddSkipRules</OnBeforePackageUsingManifest>
+  </PropertyGroup>
+  <Target Name="AddSkipRules">
+    <ItemGroup>
+      <MsDeploySkipRules Include="SkipTempDirOnDeploy">
+        <SkipAction></SkipAction>
+        <ObjectName>dirPath</ObjectName>
+        <AbsolutePath>$(_Escaped_PackageTempDir)\\Temp$</AbsolutePath>
+        <XPath></XPath>
+      </MsDeploySkipRules>
+    </ItemGroup>
+  </Target>
 </Project>
