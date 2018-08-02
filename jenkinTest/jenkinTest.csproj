@@ -461,4 +461,19 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+    
+  <PropertyGroup>
+  <OnBeforePackageUsingManifest>AddCustomSkipRules</OnBeforePackageUsingManifest>
+</PropertyGroup>
+<Target Name="AddCustomSkipRules">
+  <ItemGroup>
+    <MsDeploySkipRules Include="SkipDeleteAppData">
+      <SkipAction>Delete</SkipAction>
+      <ObjectName>filePath</ObjectName>
+      <AbsolutePath>$(_Escaped_PackageTempDir)\\web.config</AbsolutePath>
+      <XPath>
+      </XPath>
+    </MsDeploySkipRules>
+   </ItemGroup>
+</Target>
 </Project>
