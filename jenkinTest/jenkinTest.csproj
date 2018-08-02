@@ -7,8 +7,8 @@
     <ItemGroup>
       <MsDeploySkipRules Include="SkipTempDirOnDeploy">
         <SkipAction>Delete</SkipAction>
-        <ObjectName>dirPath</ObjectName>
-        <AbsolutePath>$(_Escaped_PackageTempDir)\\Account$</AbsolutePath>
+        <ObjectName>filePath</ObjectName>
+        <AbsolutePath>$(_Escaped_PackageTempDir)\\Account\\.*</AbsolutePath>
         <XPath></XPath>
       </MsDeploySkipRules>
     </ItemGroup>
