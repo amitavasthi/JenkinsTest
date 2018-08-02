@@ -467,7 +467,7 @@
   <Target Name="AddSkipRules">
     <ItemGroup>
       <MsDeploySkipRules Include="SkipTempDirOnDeploy">
-        <SkipAction></SkipAction>
+        <SkipAction>delete</SkipAction>
         <ObjectName>dirPath</ObjectName>
         <AbsolutePath>$(_Escaped_PackageTempDir)\\Account$</AbsolutePath>
         <XPath></XPath>
